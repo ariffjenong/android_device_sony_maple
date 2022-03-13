@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 # vendor/cherish/config/common.mk
-TARGET_BOO_TANIMATION_RES := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 ### cherish
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
