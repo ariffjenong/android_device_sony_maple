@@ -9,17 +9,15 @@ $(call inherit-product, device/sony/maple/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
 ### BOOTANIMATION
-# vendor/lineage/config/common_full_phone.mk
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-# vendor/lineage/config/common.mk
-TARGET_BOOTANIMATION_HALF_RES := true
+# vendor/nusantara/config/common_full_phone.mk
+TARGET_BOOT_ANIMATION_RES := 1080
 
-### LINEAGE
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+### Nusantara
+$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
+NAD_BUILD_TYPE := OFFICIAL
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_maple
+PRODUCT_NAME := nad_maple
 PRODUCT_DEVICE := maple
 PRODUCT_BRAND := Sony
 PRODUCT_MODEL := G8141
@@ -30,11 +28,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="G8141-user 9 47.2.A.10.107 172320177 release-keys"
 
 BUILD_FINGERPRINT := Sony/G8141/G8141:9/47.2.A.10.107/172320177:user/release-keys
-
-ifneq ($(LINEAGE_DEV_CERTIFICATE),)
-    PRODUCT_DEFAULT_DEV_CERTIFICATE := $(LINEAGE_DEV_CERTIFICATE)
-endif
-
-ifneq ($(LINEAGE_VERITY_CERTIFICATE),)
-    PRODUCT_VERITY_SIGNING_KEY := $(LINEAGE_VERITY_CERTIFICATE)
-endif
