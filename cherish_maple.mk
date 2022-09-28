@@ -9,21 +9,25 @@ $(call inherit-product, device/sony/maple/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
 ### BOOTANIMATION
-# vendor/lineage/config/common_full_phone.mk
+# vendor/cherish/config/common_full_phone.mk
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
-# vendor/lineage/config/common.mk
-TARGET_BOOTANIMATION_HALF_RES := true
+# vendor/cherish/config/common.mk
+TARGET_BOOTANIMATION_RES := 1080
 
-### LINEAGE
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+### cherish
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_maple
+PRODUCT_NAME := cherish_maple
 PRODUCT_DEVICE := maple
 PRODUCT_BRAND := Sony
 PRODUCT_MODEL := G8141
 PRODUCT_MANUFACTURER := Sony
+
+# Cherish OS Stuffs
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=ArifJeNong
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=maple \
